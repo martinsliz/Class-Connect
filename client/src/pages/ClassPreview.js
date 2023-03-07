@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import Client from '../services/api'
+import { getClassBySubject } from '../services/ClassServices'
 
 const ClassPreview = ({ user }) => {
   let navigate = useNavigate()
@@ -8,11 +9,11 @@ const ClassPreview = ({ user }) => {
 
   useEffect(() => {
     if (user) {
-      const handleAccount = async () => {
+      const handleClasses = async () => {
         const data = await Client.get(`/api/classes/:class_subject`)
         setClasses(data.data)
       }
-      handleAccount()
+      handleClasses()
     }
   }, [user, setClasses])
 
