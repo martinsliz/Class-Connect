@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-//import { CreateComment } from '../services/CommentService'
+import { CreateComment } from '../services/CommentService'
 
 const PostComment = () => {
   let navigate = useNavigate()
@@ -17,8 +17,8 @@ const PostComment = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-  //   await { CreateComment }
-  //   navigate(``)
+    await { CreateComment }
+    navigate(`/api/comments/${id}/`)
   }
 
 
