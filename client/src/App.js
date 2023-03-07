@@ -9,6 +9,7 @@ import { CheckSession } from './services/User'
 import Account from './pages/Account'
 import AccountSetting from './pages/AccountSetting'
 import ClassEnrollment from './pages/ClassEnrollment'
+import Lobby from './pages/Lobby'
 
 const App = () => {
   const [user, setUser] = useState(null)
@@ -48,6 +49,7 @@ const App = () => {
             path="/account/eonrollment"
             element={<ClassEnrollment user={user} />}
           />
+          <Route path="/lobby" element={<Lobby user={user} />} />
         </Routes>
       </main>
     </div>
