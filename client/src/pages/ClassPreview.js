@@ -1,31 +1,35 @@
 import { useState, useEffect } from 'react'
-import axios from 'axios'
+import { useNavigate, useParams } from 'react-router-dom'
+import Client from '../services/api'
 
-const ClassPreview = (response) => {
+const ClassPreview = ({ user }) => {
+  let navigate = useNavigate()
   const [classes, setClasses] = useState([])
 
-  const getClasses = async () => {
-    const response = await axios.get('http://localhost:3001/api/classes')
-    setClasses(response.data.classes)
-  }
-
   useEffect(() => {
-    getClasses()
-  }, [])
+    if (user) {
+      const handleAccount = async () => {
+        const data = await Client.get(`/api/classes/:class_subject`)
+        setClasses(data.data)
+      }
+      handleAccount()
+    }
+  }, [user, setClasses])
 
-  return (
+  return user ? (
     <div>
-      <h1 className="class-name">Classes</h1>
+      <h1 className="class-preview">Classes</h1>
       <div className="class-container">
-        {classes.map((classes) => (
-          <div className="class-card" key={classes._id}>
-            <h2>Name: {classes.name}</h2>
-            <p>Subject: {classes.subject}</p>
-            <p>Semester: {classes.semester}</p>
-            <p>Credits: {classes.credits}</p>
-          </div>
-        ))}
+        <h2>Name: {classes.name}</h2>
+        <p>Subject: {classes.subject}</p>
+        <p>Semester: {classes.semester}</p>
+        <p>Credits: {classes.credits}</p>
       </div>
+    </div>
+  ) : (
+    <div className="protected">
+      <h3>Oops! You must be signed in to do that!</h3>
+      <button onClick={() => navigate('/signin')}>Sign In</button>
     </div>
   )
 }
