@@ -18,14 +18,14 @@ export const GetClasses = async () => {
 //   }
 // }
 
-// export const getClassBySubject = async () => {
-//   try {
-//     const res = await Client.get('/api/classes/:class_subject')
-//     return res.data
-//   } catch (error) {
-//     throw error
-//   }
-// }
+export const getClassBySubject = async () => {
+  try {
+    const res = await Client.get('/api/classes/:class_subject')
+    return res.data
+  } catch (error) {
+    throw error
+  }
+}
 
 // export const CreateClass = async () => {
 //   try {
