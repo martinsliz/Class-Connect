@@ -16,6 +16,21 @@ const Account = ({ user }) => {
     }
   }, [user, setAccount])
 
+  if (account.totalCredits === null) {
+    account.totalCredits = 0
+  }
+
+  const classes = [
+    {
+      name: 'Religion II',
+      credits: 2
+    },
+    {
+      name: 'Humanities I',
+      credits: 2
+    }
+  ]
+
   return user ? (
     <div className="account-container col">
       <ul style={{ listStyle: 'none' }} className="dashboard">
@@ -42,9 +57,14 @@ const Account = ({ user }) => {
         </li>
       </ul>
       <div className="panel">
-        <h3>Fisrt Name: {account.firstName}</h3>
-        <h3>Last Name: {account.lastName}</h3>
-        <h3>Email: {account.email}</h3>
+        <h3>Total Credits: {account.totalCredits}</h3>
+        <h3>Enrolled:</h3>
+        {account.accountclasses?.map((enroll) => (
+          <div>
+            <label>Class Name: {enroll.name}</label>
+            <label>Credits: {enroll.credits}</label>
+          </div>
+        ))}
       </div>
     </div>
   ) : (
