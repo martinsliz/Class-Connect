@@ -11,7 +11,7 @@ export const GetComments = async () => {
 
 export const GetCommentDetails = async () => {
   try {
-    const res = await Client.get('api/comments/comment:id')
+    const res = await Client.get('api/comments/commentId')
     return res.data
   } catch (error) {
     throw error
@@ -29,7 +29,7 @@ export const CreateComment = async (req, res) => {
 
 export const UpdateComment = async () => {
   try {
-    const res = await Client.put('api/comments/comment:id')
+    const res = await Client.put('api/comments/commentId')
     return res.data
   } catch (error) {
     throw error
@@ -38,7 +38,7 @@ export const UpdateComment = async () => {
 
 export const DeleteComment = async () => {
   try {
-    const res = await Client.delete('/api/comments/comment:id')
+    const res = await Client.delete('/api/comments/commentId')
     return res.data
   } catch (error) {
     throw error
