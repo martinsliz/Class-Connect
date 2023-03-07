@@ -22,7 +22,25 @@ export const RegisterUser = async (data) => {
 
 export const UpdatePassword = async (data) => {
   try {
-    const res = await Client.put('/api/users/user_id', data)
+    const res = await Client.put('/api/users/updatePassword/:user_id', data)
+    return res.data
+  } catch (error) {
+    throw error
+  }
+}
+
+export const UpdateEmail = async (data) => {
+  try {
+    const res = await Client.put('/api/users/updateEmail/:user_id', data)
+    return res.data
+  } catch (error) {
+    throw error
+  }
+}
+
+export const GetUserById = async (data) => {
+  try {
+    const res = await Client.get('/api/users/:user_id', data)
     return res.data
   } catch (error) {
     throw error
@@ -31,7 +49,7 @@ export const UpdatePassword = async (data) => {
 
 export const DeleteUser = async (data) => {
   try {
-    const res = await Client.delete('/api/users/user_id', data)
+    const res = await Client.delete('/api/users/:user_id', data)
     return res.data
   } catch (error) {
     throw error
