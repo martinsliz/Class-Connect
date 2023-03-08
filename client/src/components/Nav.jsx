@@ -25,7 +25,6 @@ const Nav = ({ user, handleLogOut }) => {
 
   return (
     <header>
-      <Link to="/">
         <div className="logo-wrapper" alt="logo">
           <img
             className="logo"
@@ -33,7 +32,6 @@ const Nav = ({ user, handleLogOut }) => {
             alt="welcome banner"
           />
         </div>
-      </Link>
       {user ? userOptions : publicOptions}
     </header>
   )
