@@ -26,14 +26,14 @@ const Account = ({ user }) => {
           ></img>
           Account Information
         </li>
-        <li>
+        <li onClick={() => navigate('/account/setting')}>
           <img
             src="https://static.thenounproject.com/png/1110062-200.png"
             alt="update"
           ></img>
           Account Setting
         </li>
-        <li>
+        <li onClick={() => navigate('/account/enrollment')}>
           <img
             src="https://resources.finalsite.net/images/f_auto,q_auto,t_image_size_1/v1665434595/janesvillek12wius/qquo71eei8xreklnwgpb/EnrollmentIcon.png"
             alt="enroll"

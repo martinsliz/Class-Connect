@@ -34,14 +34,14 @@ const Account = ({ user }) => {
   return user ? (
     <div className="account-container col">
       <ul style={{ listStyle: 'none' }} className="dashboard">
-        <li>
+        <li onClick={() => navigate('/account')}>
           <img
             src="https://cdn.iconscout.com/icon/free/png-256/account-269-866236.png"
             alt="info"
           ></img>
           Account Information
         </li>
-        <li>
+        <li onClick={() => navigate('/account/setting')}>
           <img
             src="https://static.thenounproject.com/png/1110062-200.png"
             alt="update"
@@ -59,7 +59,7 @@ const Account = ({ user }) => {
       <div className="panel">
         <h3>Total Credits: {account.totalCredits}</h3>
         <h3>Enrolled:</h3>
-        {account.accountclasses?.map((enroll) => (
+        {account.classes?.map((enroll) => (
           <div>
             <label>Class Name: {enroll.name}</label>
             <label>Credits: {enroll.credits}</label>

@@ -52,7 +52,7 @@ const Account = ({ user }) => {
   return user ? (
     <div className="account-container col">
       <ul style={{ listStyle: 'none' }} className="dashboard">
-        <li>
+        <li onClick={() => navigate('/account')}>
           <img
             src="https://cdn.iconscout.com/icon/free/png-256/account-269-866236.png"
             alt="info"
@@ -66,7 +66,7 @@ const Account = ({ user }) => {
           ></img>
           Account Setting
         </li>
-        <li>
+        <li onClick={() => navigate('/account/enrollment')}>
           <img
             src="https://resources.finalsite.net/images/f_auto,q_auto,t_image_size_1/v1665434595/janesvillek12wius/qquo71eei8xreklnwgpb/EnrollmentIcon.png"
             alt="enroll"
