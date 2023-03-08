@@ -60,7 +60,7 @@ const App = () => {
             element={<ClassPreview user={user} />}
           />
           <Route
-            path="/classDetails/:class_id"
+            path="/form/:user_id/:class_id"
             element={<CommentForm user={user} />}
           />
           <Route
