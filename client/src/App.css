@@ -5,3 +5,40 @@ body {
 .logo {
   width: 60%;
 }
+
+.about {
+  margin: 2%
+}
+
+.about-us {
+  padding: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.liz {
+  max-width: 30%;
+  max-height: 30%;
+  border-radius: 50%;
+  border: 2px solid black;
+  }
+
+.ting-ting {
+  max-width: 38%;
+  max-height: 38%;
+  border-radius: 50%;
+  border: 2px solid black;
+  }
+  
+
+.will {
+  max-width: 30%;
+  max-height: 30%;
+  border-radius: 50%;
+  border: 2px solid black;
+  }
+  
+.github {
+  border-radius: 50%;
+  }
