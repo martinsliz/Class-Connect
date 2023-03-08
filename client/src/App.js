@@ -11,6 +11,9 @@ import AccountSetting from './pages/AccountSetting'
 import ClassEnrollment from './pages/ClassEnrollment'
 import Lobby from './pages/Lobby'
 import ClassPreview from './pages/ClassPreview'
+import ClassDetails from './pages/ClassDetails'
+import About from './pages/About'
+import CommentForm from './components/CommentForm'
 
 const App = () => {
   const [user, setUser] = useState(null)
@@ -39,6 +42,7 @@ const App = () => {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
           <Route path="/signIn" element={<SignIn setUser={setUser} />} />
           <Route path="/register" element={<Register />} />
           <Route path="/account/" element={<Account user={user} />} />
@@ -54,6 +58,14 @@ const App = () => {
           <Route
             path="/classPreview/:name"
             element={<ClassPreview user={user} />}
+          />
+          <Route
+            path="/classDetails/:class_id"
+            element={<CommentForm user={user} />}
+          />
+          <Route
+            path="/classDetails/:id"
+            element={<ClassDetails user={user} />}
           />
         </Routes>
       </main>

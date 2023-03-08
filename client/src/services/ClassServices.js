@@ -9,14 +9,14 @@ export const GetClasses = async () => {
   }
 }
 
-// export const GetClassById = async () => {
-//   try {
-//     const res = await Client.get('/api/classes/:class_id')
-//     return res.data
-//   } catch (error) {
-//     throw error
-//   }
-// }
+export const GetClassById = async () => {
+  try {
+    const res = await Client.get(`/api/classes/${id}`)
+    return res.data
+  } catch (error) {
+    throw error
+  }
+}
 
 export const getClassBySubject = async () => {
   try {
