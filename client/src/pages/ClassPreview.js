@@ -9,14 +9,12 @@ const ClassPreview = ({ user }) => {
   const [classes, setClasses] = useState([])
 
   useEffect(() => {
-    //  if (user) {
     const handleClasses = async () => {
       const data = await Client.get(`/api/classes/subject/${name}`)
       //  console.log(data)
       setClasses(data.data)
     }
     handleClasses()
-    //  }
   }, [])
 
   return user ? (
@@ -27,6 +25,7 @@ const ClassPreview = ({ user }) => {
           <h2>Name: {lecture.name}</h2>
           <p>Semester: {lecture.semester}</p>
           <p>Credits: {lecture.credits}</p>
+          <button>Enroll</button>
         </div>
       ))}
     </div>

@@ -1,6 +1,6 @@
 import Search from '../components/Search'
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, NavLink } from 'react-router-dom'
 
 import Client from '../services/api'
 
@@ -19,7 +19,7 @@ const Lobby = ({ user }) => {
     setSearchQuery('')
   }
 
-  console.log(searchResults)
+  // console.log(searchResults)
 
   const handleChange = (event) => {
     setSearchQuery(event.target.value)
@@ -39,11 +39,13 @@ const Lobby = ({ user }) => {
             <h2>Search Results</h2>
             <section className="container-grid">
               {searchResults.map((result) => (
-                <div key={result.id}>
-                  name: {result.name}
-                  semester: {result.semester}
-                  credits: {result.credits}
-                </div>
+                <NavLink to={`/classPreview/${result.subject}`} key={result.id}>
+                  <h3>name: {result.name}</h3>
+                  {/* <h3>
+                    name: {result.name} semester: {result.semester} credits:{' '}
+                    {result.credits}
+                  </h3> */}
+                </NavLink>
               ))}
             </section>
           </div>
