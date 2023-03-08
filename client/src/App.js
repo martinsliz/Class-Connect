@@ -11,7 +11,6 @@ import AccountSetting from './pages/AccountSetting'
 import ClassEnrollment from './pages/ClassEnrollment'
 import Lobby from './pages/Lobby'
 import ClassPreview from './pages/ClassPreview'
-import About from './pages/About'
 
 const App = () => {
   const [user, setUser] = useState(null)
@@ -56,7 +55,6 @@ const App = () => {
             path="/classPreview/:name"
             element={<ClassPreview user={user} />}
           />
-          <Route path="/about" element={<About />} />
         </Routes>
       </main>
     </div>
