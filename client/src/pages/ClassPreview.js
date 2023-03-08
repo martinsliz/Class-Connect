@@ -5,27 +5,28 @@ import Client from '../services/api'
 const ClassPreview = ({ user }) => {
   let navigate = useNavigate()
   const { name } = useParams()
-  //console.log(name)
   const [classes, setClasses] = useState([])
 
   useEffect(() => {
     const handleClasses = async () => {
       const data = await Client.get(`/api/classes/subject/${name}`)
-      //  console.log(data)
       setClasses(data.data)
     }
     handleClasses()
-  }, [])
+  }, [name])
 
   return user ? (
     <div>
       <h1 className="class-preview">Classes</h1>
       {classes?.map((lecture) => (
-        <div className="class-container" key={lecture.id}>
+        <div
+          className="class-container"
+          key={lecture.id}
+          onClick={() => navigate(`/classDetails/${lecture.id}`)}
+        >
           <h2>Name: {lecture.name}</h2>
           <p>Semester: {lecture.semester}</p>
           <p>Credits: {lecture.credits}</p>
-          <button>Enroll</button>
         </div>
       ))}
     </div>

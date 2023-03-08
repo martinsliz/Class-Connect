@@ -20,16 +20,16 @@ const Account = ({ user }) => {
     account.totalCredits = 0
   }
 
-  const classes = [
-    {
-      name: 'Religion II',
-      credits: 2
-    },
-    {
-      name: 'Humanities I',
-      credits: 2
-    }
-  ]
+  // const classes = [
+  //   {
+  //     name: 'Religion II',
+  //     credits: 2
+  //   },
+  //   {
+  //     name: 'Humanities I',
+  //     credits: 2
+  //   }
+  // ]
 
   return user ? (
     <div className="account-container col">
