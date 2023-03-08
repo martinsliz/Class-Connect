@@ -1,20 +1,7 @@
-import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import Client from '../services/api'
 
-const Account = ({ user }) => {
+const Account = ({ user, account }) => {
   let navigate = useNavigate()
-  const [account, setAccount] = useState({})
-
-  useEffect(() => {
-    if (user) {
-      const handleAccount = async () => {
-        const data = await Client.get(`/api/users/info/${user.id}`)
-        setAccount(data.data)
-      }
-      handleAccount()
-    }
-  }, [user, setAccount])
 
   return user ? (
     <div className="account-container col">

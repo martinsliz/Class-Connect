@@ -1,30 +1,19 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Client from '../services/api'
 
-const Account = ({ user }) => {
+const Account = ({ user, account }) => {
   let navigate = useNavigate()
   const [email, setEmail] = useState({ email: '' })
-  const [account, setAccount] = useState({})
   const [password, setPassword] = useState({
     oldPassword: '',
     newPassword: ''
   })
 
-  useEffect(() => {
-    if (user) {
-      const handleAccount = async () => {
-        const data = await Client.get(`/api/users/info/${user.id}`)
-        setAccount(data.data)
-      }
-      handleAccount()
-    }
-  }, [user, setAccount])
-
   const handleEmail = async (e) => {
     if (user) {
       e.preventDefault()
-      await Client.put(`/api/users/updateEmail/${user.id}`, email)
+      await Client.put(`/api/users/updateUserDetails/${user.id}`, email)
       setEmail({ ...email })
       alert('Email has been updated!')
       window.location.reload(false)

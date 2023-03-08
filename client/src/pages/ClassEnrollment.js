@@ -1,35 +1,11 @@
-import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import Client from '../services/api'
 
-const Account = ({ user }) => {
+const Account = ({ user, account }) => {
   let navigate = useNavigate()
-  const [account, setAccount] = useState({})
-
-  useEffect(() => {
-    if (user) {
-      const handleAccount = async () => {
-        const data = await Client.get(`/api/users/info/${user.id}`)
-        setAccount(data.data)
-      }
-      handleAccount()
-    }
-  }, [user, setAccount])
 
   if (account.totalCredits === null) {
     account.totalCredits = 0
   }
-
-  // const classes = [
-  //   {
-  //     name: 'Religion II',
-  //     credits: 2
-  //   },
-  //   {
-  //     name: 'Humanities I',
-  //     credits: 2
-  //   }
-  // ]
 
   return user ? (
     <div className="account-container col">
@@ -60,7 +36,7 @@ const Account = ({ user }) => {
         <h3>Total Credits: {account.totalCredits}</h3>
         <h3>Enrolled:</h3>
         {account.classes?.map((enroll) => (
-          <div>
+          <div key={enroll.id}>
             <label>Class Name: {enroll.name}</label>
             <label>Credits: {enroll.credits}</label>
           </div>
