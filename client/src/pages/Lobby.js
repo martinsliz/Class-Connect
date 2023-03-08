@@ -91,13 +91,19 @@ const Lobby = ({ user }) => {
       </div>
       <div>
         <h2>Subject Lists</h2>
-        {subjects.map((subject) => (
-          <NavLink to={`/classPreview/${subject}`} key={subject}>
-            <div>
-              <h3>{subject}</h3>
-            </div>
-          </NavLink>
-        ))}
+        <section className="container-grid">
+          {subjects.map((subject) => (
+            <NavLink
+              to={`/classPreview/${subject}`}
+              key={subject}
+              className="subjectLinks"
+            >
+              <div>
+                <h3 className="subject-card">{subject}</h3>
+              </div>
+            </NavLink>
+          ))}
+        </section>
       </div>
     </div>
   ) : (

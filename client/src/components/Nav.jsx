@@ -6,25 +6,30 @@ const Nav = ({ user, handleLogOut }) => {
     userOptions = (
       <nav>
         <h3>Welcome {user.email}!</h3>
-        <Link to="/lobby">Home</Link>
-        <Link onClick={handleLogOut} to="/">
+        <div className="navLinks">
+          <Link to="/lobby">Home</Link>
+          <Link onClick={handleLogOut} to="/">
           Sign Out
-        </Link>
-        <Link to='/account'>Account</Link>
+          </Link>
+          <Link to='/account'>Account</Link>
+        </div>
       </nav>
     )
   }
 
   const publicOptions = (
     <nav>
-      <Link to="/">Home</Link>
-      <Link to="/register">Register</Link>
-      <Link to="/signIn">Sign In</Link>
+      <div className="navLinks">
+        <Link to="/">Home</Link>
+        <Link to="/register">Register</Link>
+        <Link to="/signIn">Sign In</Link>
+      </div>
     </nav>
   )
 
   return (
     <header>
+
         <div className="logo-wrapper" alt="logo">
           <img
             className="logo"
