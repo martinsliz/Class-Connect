@@ -25,6 +25,44 @@ const Lobby = ({ user }) => {
     setSearchQuery(event.target.value)
   }
 
+  const subjects = [
+    'Calculus',
+    'Astronomy',
+    'Algebra',
+    'Physics',
+    'Physical Education',
+    'Music',
+    'History',
+    'Socail Studies',
+    'Art',
+    'Geography',
+    'Biology',
+    'Chemistry',
+    'Foreign Languages',
+    'Philosophy',
+    'Literature',
+    'English',
+    'Computer Science',
+    'Health Education',
+    'Anthropology',
+    'Dance',
+    'Drama',
+    'Forensics',
+    'Geometry',
+    'Humanities',
+    'Law',
+    'Nutrition',
+    'Mechanics',
+    'Photography',
+    'Pottery',
+    'Probability',
+    'Religion',
+    'Sociology',
+    'Statistics',
+    'Trigonometry',
+    'Web Designing'
+  ]
+
   return user ? (
     <div>
       <h1>Search classes</h1>
@@ -39,17 +77,27 @@ const Lobby = ({ user }) => {
             <h2>Search Results</h2>
             <section className="container-grid">
               {searchResults.map((result) => (
-                <NavLink to={`/classPreview/${result.subject}`} key={result.id}>
-                  <h3>name: {result.name}</h3>
-                  {/* <h3>
-                    name: {result.name} semester: {result.semester} credits:{' '}
-                    {result.credits}
-                  </h3> */}
+                <NavLink to={`/classDetails/${result.id}`} key={result.id}>
+                  <div>
+                    <h3>name: {result.name}</h3>
+                    <p>Semester: {result.semester}</p>
+                    <p>Credits: {result.credits}</p>
+                  </div>
                 </NavLink>
               ))}
             </section>
           </div>
         )}
+      </div>
+      <div>
+        <h2>Subject Lists</h2>
+        {subjects.map((subject) => (
+          <NavLink to={`/classPreview/${subject}`} key={subject}>
+            <div>
+              <h3>{subject}</h3>
+            </div>
+          </NavLink>
+        ))}
       </div>
     </div>
   ) : (

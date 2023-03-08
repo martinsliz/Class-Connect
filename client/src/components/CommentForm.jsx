@@ -1,10 +1,11 @@
 import { useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { CreateComment } from '../services/CommentService'
+import Client from '../services/api'
 
 const PostComment = () => {
   let navigate = useNavigate()
-  const { id } = useParams()
+  const { userId } = useParams()
+  const { classId } = useParams()
 
   const initialState = {
     content: ''
@@ -17,8 +18,8 @@ const PostComment = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-    await { CreateComment }
-    navigate(`/api/comments/${id}/`)
+    await Client.post(`/api/comments/${userId}/${classId}`, )
+    navigate(`/classDetails/${classId}/`)
   }
 
 
@@ -27,16 +28,17 @@ const PostComment = () => {
       <div className="formBox">
         <form onSubmit={handleSubmit}>
           <h2>Post a comment!</h2>
-          <label htmlFor="content">Comment</label>
-          <input
+          <label htmlFor="content"></label>
+          <textarea
+            cols="40" rows="5"
             placeholder='Leave review here'
-            type="text"
             id="content"
-            className='content'
             onChange={handleChange}
             value={createComment.content}
-          ></input>
+          ></textarea>
+          <div>
           <button className="formSubmit-btn" type="submit">Send</button>
+          </div>
         </form>
       </div>
     </div>
