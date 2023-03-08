@@ -11,10 +11,9 @@ const ClassDetails = ({ user }) => {
     const getClassDetails = async () => {
       const response = await Client.get(`/api/classes/${id}`)
       setClassDetails(response.data)
-      // console.log(response.data)
     }
     getClassDetails()
-  }, [])
+  }, [id])
 
   return user ? (
     <div className="class-content">
