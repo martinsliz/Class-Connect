@@ -63,7 +63,7 @@ const About = () => {
         <div className="ting-ting-profile">
           <img
             className="ting-ting"
-            src={'https://i.imgur.com/otWjrs9.jpg'}
+            src={'https://imagizer.imageshack.com/img922/4452/yiTkeY.jpg'}
             alt=""
           />
           <a

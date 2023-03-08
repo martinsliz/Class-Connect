@@ -5,3 +5,29 @@ body {
 .logo {
   width: 60%;
 }
+
+.liz {
+  max-width: 30%;
+  max-height: 30%;
+  border-radius: 50%;
+  border: 2px solid black;
+  }
+
+.ting-ting {
+  max-width: 37%;
+  max-height: 37%;
+  border-radius: 50%;
+  border: 2px solid black;
+  }
+  
+
+.will {
+  max-width: 30%;
+  max-height: 30%;
+  border-radius: 50%;
+  border: 2px solid black;
+  }
+  
+.github {
+  border-radius: 50%;
+  }
