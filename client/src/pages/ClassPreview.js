@@ -18,10 +18,10 @@ const ClassPreview = ({ user }) => {
   return user ? (
     <div>
       <h1>Classes</h1>
-      <div className="class-preview">
+      <div className="container-grid">
         {classes?.map((lecture) => (
           <div
-            className="class-container"
+            className="search-results"
             key={lecture.id}
             onClick={() => navigate(`/classDetails/${lecture.id}`)}
           >

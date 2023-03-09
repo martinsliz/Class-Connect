@@ -5,6 +5,7 @@ const Home = () => {
 
   return (
     <div className="home-container col">
+      <h1>Welcome To Class Connector!</h1>
       <section className="welcome-signin">
         <button onClick={() => navigate('/signin')}>
           Click Here To Get Started
