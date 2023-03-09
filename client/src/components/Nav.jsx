@@ -6,8 +6,9 @@ const Nav = ({ user, handleLogOut }) => {
     userOptions = (
       <nav>
         <h3>Welcome {user.email}!</h3>
-        <Link to="/lobby">Home</Link>
-        <Link onClick={handleLogOut} to="/">
+        <div className="navLinks">
+          <Link to="/lobby">Home</Link>
+          <Link onClick={handleLogOut} to="/">
           Sign Out
         </Link>
         <Link to='/account'>Account</Link>
@@ -27,6 +28,7 @@ const Nav = ({ user, handleLogOut }) => {
 
   return (
     <header>
+
         <div className="logo-wrapper" alt="logo">
           <img
             className="logo"
