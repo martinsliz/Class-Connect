@@ -39,7 +39,6 @@ const ClassDetails = ({ user, account }) => {
         totalCredits: classDetails.credits + account.totalCredits
       })
       setEnrolled(true)
-      alert('You are ENROLLED in this class!')
       window.location.reload(false)
     }
   }
@@ -51,7 +50,6 @@ const ClassDetails = ({ user, account }) => {
         totalCredits: account.totalCredits - classDetails.credits
       })
       setUnEnrolled(true)
-      alert('You WITHDRAWL this class!')
       window.location.reload(false)
     }
   }
@@ -59,7 +57,6 @@ const ClassDetails = ({ user, account }) => {
   const handleDeleteComment = async (id) => {
     if (user) {
       await Client.delete(`/api/comments/${id}`)
-      alert('your comment has been deleted!')
       window.location.reload(false)
     }
   }
@@ -93,7 +90,7 @@ const ClassDetails = ({ user, account }) => {
           )}
           {!unenrolled && (
             <div>
-              <button onClick={handleUnEnrolled}>Withdrawl</button>
+              <button onClick={handleUnEnrolled}>Withdraw</button>
             </div>
           )}
         </div>
@@ -102,7 +99,9 @@ const ClassDetails = ({ user, account }) => {
           <div className="review">
             {comments?.map((comment) => (
               <div className="comment-container" key={comment.id}>
-                <p>Comment: {comment.content}</p>
+                <p style={{ fontWeight: 'bolder' }}>
+                  Comment: {comment.content}
+                </p>
                 {user?.id === comment.userId && (
                   <button
                     onClick={() => navigate(`/updateForm/${id}/${comment.id}`)}

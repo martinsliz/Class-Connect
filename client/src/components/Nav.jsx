@@ -15,7 +15,7 @@ const Nav = ({ user, handleLogOut }) => {
             <h3>Welcome {user.email}!</h3>
           </div>
         </div>
-        <div>
+        <div style={{ fontWeight: 'bolder' }}>
           <Link to="/lobby">Home</Link>
           <Link onClick={handleLogOut} to="/">
             Sign Out
@@ -36,7 +36,7 @@ const Nav = ({ user, handleLogOut }) => {
           alt="welcome banner"
         />
       </div>
-      <div>
+      <div style={{ fontWeight: 'bolder' }}>
         <Link to="/">Home</Link>
         <Link to="/register">Register</Link>
         <Link to="/signIn">Sign In</Link>
@@ -45,18 +45,7 @@ const Nav = ({ user, handleLogOut }) => {
     </nav>
   )
 
-  return (
-    <header>
-      {/* <div className="logo-wrapper" alt="logo">
-          <img
-            className="logo"
-            src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-            alt="welcome banner"
-          />
-        </div> */}
-      {user ? userOptions : publicOptions}
-    </header>
-  )
+  return <header>{user ? userOptions : publicOptions}</header>
 }
 
 export default Nav

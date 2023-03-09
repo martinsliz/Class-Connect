@@ -46,24 +46,30 @@ const Account = ({ user, account }) => {
             src="https://cdn.iconscout.com/icon/free/png-256/account-269-866236.png"
             alt="info"
           ></img>
-          Account Information
+          <label className="labels" style={{ fontWeight: 'bolder' }}>
+            Account Information
+          </label>
         </li>
         <li>
           <img
             src="https://static.thenounproject.com/png/1110062-200.png"
             alt="update"
           ></img>
-          Account Setting
+          <label className="labels" style={{ fontWeight: 'bolder' }}>
+            Account Setting
+          </label>
         </li>
         <li onClick={() => navigate('/account/enrollment')}>
           <img
             src="https://resources.finalsite.net/images/f_auto,q_auto,t_image_size_1/v1665434595/janesvillek12wius/qquo71eei8xreklnwgpb/EnrollmentIcon.png"
             alt="enroll"
           ></img>
-          Class Enrollment
+          <label className="labels" style={{ fontWeight: 'bolder' }}>
+            Class Enrollment
+          </label>
         </li>
       </ul>
-      <div className="panel">
+      <div className="setting-panel" style={{ fontWeight: 'bolder' }}>
         <form onSubmit={handleEmail}>
           <div>
             <h3>Update Email</h3>
