@@ -104,7 +104,7 @@ const Account = ({ user, account }) => {
             onChange={passwordChange}
             value={password.newPassword}
           />
-          <button type="submit" className="buttom">
+          <button type="submit" className="button">
             Send Update
           </button>
         </form>

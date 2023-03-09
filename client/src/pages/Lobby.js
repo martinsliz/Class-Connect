@@ -1,7 +1,6 @@
 import Search from '../components/Search'
 import { useState } from 'react'
 import { useNavigate, NavLink } from 'react-router-dom'
-
 import Client from '../services/api'
 
 const Lobby = ({ user }) => {
@@ -18,8 +17,6 @@ const Lobby = ({ user }) => {
     toggleSearched(true)
     setSearchQuery('')
   }
-
-  // console.log(searchResults)
 
   const handleChange = (event) => {
     setSearchQuery(event.target.value)
@@ -79,7 +76,7 @@ const Lobby = ({ user }) => {
               {searchResults.map((result) => (
                 <NavLink to={`/classDetails/${result.id}`} key={result.id}>
                   <div className="search-results">
-                    <h3>name: {result.name}</h3>
+                    <h3>{result.name}</h3>
                     <p>Semester: {result.semester}</p>
                     <p>Credits: {result.credits}</p>
                   </div>
