@@ -23,7 +23,6 @@ const UpdateComment = ({ user }) => {
     event.preventDefault()
     await Client.put(`/api/comments/${id}`, updateComment)
     setUpdateComment(initialState)
-    alert('your comment has been updated!')
     navigate(`/classDetails/${classId}/`)
   }
 

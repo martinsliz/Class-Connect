@@ -1,8 +1,8 @@
 const About = () => {
   return (
     <div className="about">
-      <h1>About Page</h1>
-      <span>
+      <h1 style={{ fontWeight: 'bolder' }}>About Page</h1>
+      <span style={{ fontWeight: 'bolder' }}>
         <p>
           Welcome to our website, where you can easily enroll in classes and
           manage your course load. Our platform allows you to browse through a

@@ -4,32 +4,38 @@ const Account = ({ user, account }) => {
   let navigate = useNavigate()
 
   return user ? (
-    <div className="account-container col">
+    <div className="account-container">
       <ul style={{ listStyle: 'none' }} className="dashboard">
         <li>
           <img
             src="https://cdn.iconscout.com/icon/free/png-256/account-269-866236.png"
             alt="info"
           ></img>
-          Account Information
+          <label className="labels" style={{ fontWeight: 'bolder' }}>
+            Account Information
+          </label>
         </li>
         <li onClick={() => navigate('/account/setting')}>
           <img
             src="https://static.thenounproject.com/png/1110062-200.png"
             alt="update"
           ></img>
-          Account Setting
+          <label className="labels" style={{ fontWeight: 'bolder' }}>
+            Account Setting
+          </label>
         </li>
         <li onClick={() => navigate('/account/enrollment')}>
           <img
             src="https://resources.finalsite.net/images/f_auto,q_auto,t_image_size_1/v1665434595/janesvillek12wius/qquo71eei8xreklnwgpb/EnrollmentIcon.png"
             alt="enroll"
           ></img>
-          Class Enrollment
+          <label className="labels" style={{ fontWeight: 'bolder' }}>
+            Class Enrollment
+          </label>
         </li>
       </ul>
-      <div className="panel">
-        <h3>Fisrt Name: {account.firstName}</h3>
+      <div className="panel" style={{ fontWeight: 'bolder' }}>
+        <h3>First Name: {account.firstName}</h3>
         <h3>Last Name: {account.lastName}</h3>
         <h3>Email: {account.email}</h3>
       </div>

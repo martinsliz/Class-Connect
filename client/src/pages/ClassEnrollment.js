@@ -15,30 +15,36 @@ const Account = ({ user, account }) => {
             src="https://cdn.iconscout.com/icon/free/png-256/account-269-866236.png"
             alt="info"
           ></img>
-          Account Information
+          <label className="labels" style={{ fontWeight: 'bolder' }}>
+            Account Information
+          </label>
         </li>
         <li onClick={() => navigate('/account/setting')}>
           <img
             src="https://static.thenounproject.com/png/1110062-200.png"
             alt="update"
           ></img>
-          Account Setting
+          <label className="labels" style={{ fontWeight: 'bolder' }}>
+            Account Setting
+          </label>
         </li>
         <li>
           <img
             src="https://resources.finalsite.net/images/f_auto,q_auto,t_image_size_1/v1665434595/janesvillek12wius/qquo71eei8xreklnwgpb/EnrollmentIcon.png"
             alt="enroll"
           ></img>
-          Class Enrollment
+          <label className="labels" style={{ fontWeight: 'bolder' }}>
+            Class Enrollment
+          </label>
         </li>
       </ul>
-      <div className="panel">
+      <div className="panel" style={{ fontWeight: 'bolder' }}>
         <h3>Total Credits: {account.totalCredits}</h3>
         <h3>Enrolled:</h3>
         {account.classes?.map((enroll) => (
-          <div key={enroll.id}>
-            <label>Class Name: {enroll.name}</label>
-            <label>Credits: {enroll.credits}</label>
+          <div className="class-info" key={enroll.id}>
+            <h4>Class: {enroll.name}</h4>
+            <h4>Credits: {enroll.credits}</h4>
           </div>
         ))}
       </div>

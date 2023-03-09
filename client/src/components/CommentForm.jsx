@@ -23,7 +23,6 @@ const PostComment = ({ user }) => {
     event.preventDefault()
     await Client.post(`/api/comments/${userId}/${classId}`, createComment)
     setCreateComment(initialState)
-    alert('Comment has been posted!')
     navigate(`/classDetails/${classId}/`)
   }
 
