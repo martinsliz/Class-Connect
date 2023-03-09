@@ -13,14 +13,14 @@ const ClassDetails = ({ user, account }) => {
   useEffect(() => {
     const getClassDetails = async () => {
       const response = await Client.get(`/api/classes/${id}`)
-      // console.log(response.data.comments)
       setClassDetails(response.data)
-      setComments(response.data.comments.slice(0, 10))
+      let comments = response.data.comments.slice(-10)
+      setComments(comments.reverse())
     }
     getClassDetails()
   }, [id])
 
-  const button = () => {
+  const enrollButton = () => {
     for (let i = 0; i < account.classes?.length; i++) {
       if (account.classes[i].id === classDetails?.id) {
         enrolled = true
@@ -30,7 +30,7 @@ const ClassDetails = ({ user, account }) => {
     }
   }
 
-  button()
+  enrollButton()
 
   const handleEnrolled = async () => {
     if (user) {
@@ -39,6 +39,7 @@ const ClassDetails = ({ user, account }) => {
         totalCredits: classDetails.credits + account.totalCredits
       })
       setEnrolled(true)
+      alert('You are ENROLLED in this class!')
       window.location.reload(false)
     }
   }
@@ -50,6 +51,15 @@ const ClassDetails = ({ user, account }) => {
         totalCredits: account.totalCredits - classDetails.credits
       })
       setUnEnrolled(true)
+      alert('You WITHDRAWL this class!')
+      window.location.reload(false)
+    }
+  }
+
+  const handleDeleteComment = async (id) => {
+    if (user) {
+      await Client.delete(`/api/comments/${id}`)
+      alert('your comment has been deleted!')
       window.location.reload(false)
     }
   }
@@ -98,8 +108,18 @@ const ClassDetails = ({ user, account }) => {
           {comments?.map((comment) => (
             <div className="comment-container" key={comment.id}>
               <p>Comment: {comment.content}</p>
-              <button>Update Comment</button>
-              <button>Delete Comment</button>
+              {user?.id === comment.userId && (
+                <button
+                  onClick={() => navigate(`/updateForm/${id}/${comment.id}`)}
+                >
+                  Update Comment
+                </button>
+              )}
+              {user?.id === comment.userId && (
+                <button onClick={() => handleDeleteComment(comment.id)}>
+                  Delete Comment
+                </button>
+              )}
             </div>
           ))}
         </div>
