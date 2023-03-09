@@ -78,7 +78,7 @@ const Lobby = ({ user }) => {
             <section className="container-grid">
               {searchResults.map((result) => (
                 <NavLink to={`/classDetails/${result.id}`} key={result.id}>
-                  <div>
+                  <div className="search-results">
                     <h3>name: {result.name}</h3>
                     <p>Semester: {result.semester}</p>
                     <p>Credits: {result.credits}</p>
