@@ -11,11 +11,11 @@ const About = () => {
           taking and track your progress towards graduation.
         </p>
         <p>
-          But that's not all - our website also features a community aspect
-          where you can leave comments on classes you've taken, providing
-          valuable feedback for other users. With our user-friendly interface,
-          you can manage your schedule, track your progress, and engage with
-          other learners all in one place.
+          But that's not all - our website features a community aspect where you
+          can leave comments on classes you've taken, providing valuable
+          feedback for other users. With our user-friendly interface, you can
+          manage your schedule, track your progress, and engage with other
+          learners all in one place.
         </p>
         <p>
           Whether you're looking to broaden your horizons, gain new skills, or
