@@ -17,18 +17,20 @@ const ClassPreview = ({ user }) => {
 
   return user ? (
     <div>
-      <h1 className="class-preview">Classes</h1>
-      {classes?.map((lecture) => (
-        <div
-          className="class-container"
-          key={lecture.id}
-          onClick={() => navigate(`/classDetails/${lecture.id}`)}
-        >
-          <h2>Name: {lecture.name}</h2>
-          <p>Semester: {lecture.semester}</p>
-          <p>Credits: {lecture.credits}</p>
-        </div>
-      ))}
+      <h1>Classes</h1>
+      <div className="class-preview">
+        {classes?.map((lecture) => (
+          <div
+            className="class-container"
+            key={lecture.id}
+            onClick={() => navigate(`/classDetails/${lecture.id}`)}
+          >
+            <h2>Name: {lecture.name}</h2>
+            <p>Semester: {lecture.semester}</p>
+            <p>Credits: {lecture.credits}</p>
+          </div>
+        ))}
+      </div>
     </div>
   ) : (
     <div className="protected">
