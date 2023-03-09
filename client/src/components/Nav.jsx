@@ -10,20 +10,19 @@ const Nav = ({ user, handleLogOut }) => {
           <Link to="/lobby">Home</Link>
           <Link onClick={handleLogOut} to="/">
           Sign Out
-          </Link>
-          <Link to='/account'>Account</Link>
-        </div>
+        </Link>
+        <Link to='/account'>Account</Link>
+        <Link to='/about'>About</Link>
       </nav>
     )
   }
 
   const publicOptions = (
     <nav>
-      <div className="navLinks">
-        <Link to="/">Home</Link>
-        <Link to="/register">Register</Link>
-        <Link to="/signIn">Sign In</Link>
-      </div>
+      <Link to="/">Home</Link>
+      <Link to="/register">Register</Link>
+      <Link to="/signIn">Sign In</Link>
+      <Link to='/about'>About</Link>
     </nav>
   )
 

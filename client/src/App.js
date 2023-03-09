@@ -15,6 +15,7 @@ import ClassPreview from './pages/ClassPreview'
 import ClassDetails from './pages/ClassDetails'
 import About from './pages/About'
 import CommentForm from './components/CommentForm'
+import UpdateComment from './components/UpdateComment'
 
 const App = () => {
   const [user, setUser] = useState(null)
@@ -76,8 +77,12 @@ const App = () => {
             element={<ClassPreview user={user} />}
           />
           <Route
-            path="/form/:user_id/:class_id"
+            path="/form/:userId/:classId"
             element={<CommentForm user={user} />}
+          />
+          <Route
+            path="/updateForm/:classId/:id"
+            element={<UpdateComment user={user} />}
           />
           <Route
             path="/classDetails/:id"
