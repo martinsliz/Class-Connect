@@ -25,7 +25,7 @@ const ClassPreview = ({ user }) => {
             key={lecture.id}
             onClick={() => navigate(`/classDetails/${lecture.id}`)}
           >
-            <h2>Name: {lecture.name}</h2>
+            <h2>{lecture.name}</h2>
             <p>Semester: {lecture.semester}</p>
             <p>Credits: {lecture.credits}</p>
           </div>
