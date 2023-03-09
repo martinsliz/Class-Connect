@@ -51,7 +51,7 @@ const ClassDetails = ({ user, account }) => {
         totalCredits: account.totalCredits - classDetails.credits
       })
       setUnEnrolled(true)
-      alert('You WITHDRAWL this class!')
+      alert('You WITHDREW from this class!')
       window.location.reload(false)
     }
   }
@@ -59,7 +59,7 @@ const ClassDetails = ({ user, account }) => {
   const handleDeleteComment = async (id) => {
     if (user) {
       await Client.delete(`/api/comments/${id}`)
-      alert('your comment has been deleted!')
+      alert('Your comment has been deleted!')
       window.location.reload(false)
     }
   }
@@ -96,7 +96,7 @@ const ClassDetails = ({ user, account }) => {
           )}
           {!unenrolled && (
             <div>
-              <button onClick={handleUnEnrolled}>Withdrawl</button>
+              <button onClick={handleUnEnrolled}>Withdraw</button>
             </div>
           )}
         </div>
