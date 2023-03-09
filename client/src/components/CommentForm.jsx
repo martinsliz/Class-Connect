@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import Client from '../services/api'
 
-const PostComment = ({user}) => {
+const PostComment = ({ user }) => {
   let navigate = useNavigate()
   const { userId } = useParams()
   const { classId } = useParams()
@@ -13,7 +13,10 @@ const PostComment = ({user}) => {
   const [createComment, setCreateComment] = useState(initialState)
 
   const handleChange = (event) => {
-    setCreateComment({ ...createComment, [event.target.id]: event.target.value })
+    setCreateComment({
+      ...createComment,
+      [event.target.id]: event.target.value
+    })
   }
 
   const handleSubmit = async (event) => {
@@ -24,21 +27,24 @@ const PostComment = ({user}) => {
     navigate(`/classDetails/${classId}/`)
   }
 
-  return user? (
+  return user ? (
     <div className="reviewContainer">
       <div className="formBox">
         <form onSubmit={handleSubmit}>
           <h2>Post a comment!</h2>
           <label htmlFor="content"></label>
           <textarea
-            cols="40" rows="5"
-            placeholder='Leave review here'
+            cols="40"
+            rows="5"
+            placeholder="Leave review here"
             id="content"
             onChange={handleChange}
             value={createComment.content}
           ></textarea>
           <div>
-          <button className="formSubmit-btn" type="submit">Send</button>
+            <button className="formSubmit-btn" type="submit">
+              Send
+            </button>
           </div>
         </form>
       </div>

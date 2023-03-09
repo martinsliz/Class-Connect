@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import Client from '../services/api'
 
-const UpdateComment = ({user}) => {
+const UpdateComment = ({ user }) => {
   let navigate = useNavigate()
   const { classId } = useParams()
   const { id } = useParams()
@@ -13,7 +13,10 @@ const UpdateComment = ({user}) => {
   const [updateComment, setUpdateComment] = useState(initialState)
 
   const handleChange = (event) => {
-    setUpdateComment({ ...updateComment, [event.target.id]: event.target.value })
+    setUpdateComment({
+      ...updateComment,
+      [event.target.id]: event.target.value
+    })
   }
 
   const handleSubmit = async (event) => {
@@ -22,24 +25,26 @@ const UpdateComment = ({user}) => {
     setUpdateComment(initialState)
     alert('your comment has been updated!')
     navigate(`/classDetails/${classId}/`)
-    }
+  }
 
-
-  return user? (
+  return user ? (
     <div className="reviewContainer">
       <div className="formBox">
         <form onSubmit={handleSubmit}>
           <h2>Update your comment!</h2>
           <label htmlFor="content"></label>
           <textarea
-            cols="40" rows="5"
-            placeholder='Leave review here'
+            cols="40"
+            rows="5"
+            placeholder="Leave review here"
             id="content"
             onChange={handleChange}
             value={updateComment.content}
           ></textarea>
           <div>
-          <button className="formSubmit-btn" type="submit">Send</button>
+            <button className="formSubmit-btn" type="submit">
+              Send
+            </button>
           </div>
         </form>
       </div>

@@ -72,13 +72,7 @@ const ClassDetails = ({ user, account }) => {
       <section className="details">
         <div className="flex-row">
           <div className="detail">
-            <h3>Name: {classDetails.name}</h3>
-          </div>
-          <div className="detail">
             <h3>Subject: {classDetails.subject}</h3>
-          </div>
-          <div className="detail">
-            <h3>Description: {classDetails.description}</h3>
           </div>
           <div className="detail">
             <h3>Semester: {classDetails.semester}</h3>
@@ -88,6 +82,9 @@ const ClassDetails = ({ user, account }) => {
           </div>
           <div className="detail">
             <h3>Credits: {classDetails.credits}</h3>
+          </div>
+          <div className="detail">
+            <h3>Description: {classDetails.description}</h3>
           </div>
           {!enrolled && (
             <div>
@@ -101,28 +98,30 @@ const ClassDetails = ({ user, account }) => {
           )}
         </div>
         <div>
-          <h3 className="class-preview">Comments</h3>
-          <button onClick={() => navigate(`/form/${user.id}/${id}`)}>
-            Post a Comment
-          </button>
-          {comments?.map((comment) => (
-            <div className="comment-container" key={comment.id}>
-              <p>Comment: {comment.content}</p>
-              {user?.id === comment.userId && (
-                <button
-                  onClick={() => navigate(`/updateForm/${id}/${comment.id}`)}
-                >
-                  Update Comment
-                </button>
-              )}
-              {user?.id === comment.userId && (
-                <button onClick={() => handleDeleteComment(comment.id)}>
-                  Delete Comment
-                </button>
-              )}
-            </div>
-          ))}
+          <h1 className="comments">Comments</h1>
+          <div className="review">
+            {comments?.map((comment) => (
+              <div className="comment-container" key={comment.id}>
+                <p>Comment: {comment.content}</p>
+                {user?.id === comment.userId && (
+                  <button
+                    onClick={() => navigate(`/updateForm/${id}/${comment.id}`)}
+                  >
+                    Update Comment
+                  </button>
+                )}
+                {user?.id === comment.userId && (
+                  <button onClick={() => handleDeleteComment(comment.id)}>
+                    Delete Comment
+                  </button>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
+        <button onClick={() => navigate(`/form/${user.id}/${id}`)}>
+          Post a Comment
+        </button>
       </section>
     </div>
   ) : (

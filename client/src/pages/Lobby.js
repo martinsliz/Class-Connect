@@ -89,8 +89,18 @@ const Lobby = ({ user }) => {
           </div>
         )}
       </div>
-      <div>
-        <h2>Subject Lists</h2>
+      <div className="subject-list">
+        <div className="subject">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/3330/3330317.png"
+            alt="books"
+          ></img>
+          <h2>Subject Lists</h2>
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/3330/3330317.png"
+            alt="books"
+          ></img>
+        </div>
         <section className="container-grid">
           {subjects.map((subject) => (
             <NavLink
