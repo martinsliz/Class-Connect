@@ -30,7 +30,7 @@ const Lobby = ({ user }) => {
     'Physical Education',
     'Music',
     'History',
-    'Socail Studies',
+    'Social Studies',
     'Art',
     'Geography',
     'Biology',
