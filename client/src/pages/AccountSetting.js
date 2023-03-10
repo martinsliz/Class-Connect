@@ -15,7 +15,6 @@ const Account = ({ user, account }) => {
       e.preventDefault()
       await Client.put(`/api/users/updateUserDetails/${user.id}`, email)
       setEmail({ ...email })
-      alert('Email has been updated!')
       window.location.reload(false)
     }
   }
@@ -25,7 +24,6 @@ const Account = ({ user, account }) => {
       e.preventDefault()
       await Client.put(`/api/users/updatePassword/${user.id}`, password)
       setPassword({ ...password })
-      alert('Password has been updated!')
       window.location.reload(false)
     }
   }

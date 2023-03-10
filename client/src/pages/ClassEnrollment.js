@@ -42,7 +42,11 @@ const Account = ({ user, account }) => {
         <h3>Total Credits: {account.totalCredits}</h3>
         <h3>Enrolled:</h3>
         {account.classes?.map((enroll) => (
-          <div className="class-info" key={enroll.id}>
+          <div
+            className="class-info"
+            key={enroll.id}
+            onClick={() => navigate(`/classDetails/${enroll.id}`)}
+          >
             <h4>Class: {enroll.name}</h4>
             <h4>Credits: {enroll.credits}</h4>
           </div>

@@ -138,14 +138,6 @@ button:hover {
   justify-content: center;
 }
 
-.results-grid {
-  padding: 1em;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 250px);
-  grid-gap: 2em;
-  justify-content: center;
-}
-
 .search-results {
   border-radius: 16px;
   border: 2px solid black;
@@ -204,7 +196,6 @@ button:hover {
   border-radius: 16px;
   border: 2px;
   backdrop-filter: blur(8px);
-  cursor: pointer;
   transition: all 0.2s;
   margin: 2%;
   justify-content: center;
