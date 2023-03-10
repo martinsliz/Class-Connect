@@ -1,6 +1,6 @@
 import Axios from 'axios'
 
-export const BASE_URL = 'https://class-connector-backend.fly.dev/'
+export const BASE_URL = 'https://class-connector-backend.herokuapp.com/'
 
 const Client = Axios.create({ baseURL: BASE_URL })
 
